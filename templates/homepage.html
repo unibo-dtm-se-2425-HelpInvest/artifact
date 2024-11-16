@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HelpInvest</title>
+    <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='styles/homepage.css') }}">
+
+</head>
+
+    <body>
+        <header>
+            <h1>Welcome to HelpInvest</h1>
+        
+        </header>
+        
+        <h2>Input the data</h2>
+            
+            <form  method="GET" action="#">
+                For how many years would you like to invest?:
+                <input type="text" name="years" id="years" required></input><br>
+                <br>
+                How much would you like to invest?:
+                <input type="text" name="capital" id="capital" required></input><br>
+                <br>
+                What is your risk profile?
+                <select name="risk_profile" id="risk_profile">
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
+                </select><br>
+                <br>
+                <input type="submit" name="button" id="button" value="GO!"></input>
+
+                
+                
+            
+            </form>
+           
+    
+        </body>
+</html>

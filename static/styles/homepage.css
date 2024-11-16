@@ -1,0 +1,38 @@
+html{
+    height: 200%;
+}
+
+body{
+    margin: 0%;
+    margin-top: 0%;
+    background-size:cover;
+    text-align: center; 
+}
+
+header{
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+h1{
+    font-size: 300%;
+}
+
+#button{
+    width: 150px;
+    height: 50px;
+    background-color:aqua;
+    font-weight: bold;
+}
+
+#button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+
