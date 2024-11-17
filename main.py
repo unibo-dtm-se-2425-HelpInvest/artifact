@@ -1,7 +1,5 @@
-#Base version of the project
 
-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 import matplotlib.pyplot as plt
 import numpy as np
 import os as os
@@ -13,7 +11,7 @@ def home():
 
     if request.method == "GET":
         if (request.args.get("years") == None):
-            return render_template("HelpInvest.html")
+            return render_template("homepage.html")
         elif(request.args.get("years") == ""):
             return "<html><body> <h1>Invalid number</h1></body></html>"
         else:
@@ -44,8 +42,8 @@ def home():
                     i += 1
                 
                 if request.args.get("risk_profile") == "low":
-                    avgrate = 1.025
-                    lowrate = 1.02
+                    avgrate = 1.02
+                    lowrate = 1.01
                     highrate = 1.03
                 
                     i = 0
@@ -70,9 +68,9 @@ def home():
                         highret.append(highcapital)   
 
                 if request.args.get("risk_profile") == "medium":
-                    avgrate = 1.1
+                    avgrate = 1.07
                     lowrate = 1.05
-                    highrate = 1.15
+                    highrate = 1.09
                     
                     i = 0
                     avgcapital = capital
@@ -97,9 +95,9 @@ def home():
                     
 
                 if request.args.get("risk_profile") == "high":
-                    avgrate = 1.2
+                    avgrate = 1.12
                     lowrate = 1.1
-                    highrate = 1.3
+                    highrate = 1.14
                         
                     i = 0
                     avgcapital = capital
@@ -127,11 +125,31 @@ def home():
                 avgret = np.array(avgret)
                 lowret = np.array(lowret)
                 highret = np.array(highret)
-
-                plt.plot(timeline,avgret, color = "b")
-                plt.plot(timeline,highret, color = "g")
-                plt.plot(timeline,lowret, color = "r")
                 
+                
+                
+                plt.figure().set_figheight(6)
+                plt.plot(timeline,highret, color = "green", label=f"High return at {int((highrate-1)*100)}%")
+                plt.plot(timeline,avgret, color = "blue", label=f"Average return at {int((avgrate-1)*100)}%")
+                plt.plot(timeline,lowret, color = "red", label=f"Low return at {int((lowrate-1)*100)}%")
+
+                plt.ylim(bottom = capital)
+                plt.legend()
+
+            
+                plt.xticks(np.arange(min(timeline), max(timeline)+1, (years/10)))
+                plt.ticklabel_format(useOffset=False, style= "plain")
+
+                plt.title(f"Projection for {years} years, with a capital of {capital}€")
+                plt.xlabel("Years")
+                plt.ylabel("Portfolio Value")
+
+                plt.fill_between(timeline, highret, avgret, color = "green", alpha = 0.3)
+                plt.fill_between(timeline, avgret, lowret, color = "blue", alpha = 0.3)
+                plt.fill_between(timeline, lowret, color = "red", alpha = 0.3)
+
+
+              
 
                 script_dir = os.path.dirname(__file__ )
                 results_dir = os.path.join(script_dir, 'static/images/')
@@ -141,7 +159,7 @@ def home():
                     os.makedirs(results_dir)
                 
                 
-                plt.savefig(results_dir + "plot.png")
+                plt.savefig(results_dir + "plot.png", dpi = 300)
             
                 
                 return render_template("answer.html", capital = capital, years = years)
