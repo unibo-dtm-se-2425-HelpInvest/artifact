@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>HelpInvest</title>
-    <link rel="stylesheet" href="STYLE.css">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/homepage.css') }}">
 </head>
 
 <body>
     <h1>Here's the graph</h1>
-    <img src="static/images/plot.png" alt="plot" width="500" height="600">
+    <img src="static/images/plot.png" alt="plot" width="500" height="500">
     <a href={{url_for("home")}}>Go Back</a>
 </body>
