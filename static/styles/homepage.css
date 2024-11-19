@@ -6,34 +6,71 @@ html{
 body{
     margin: 0%;
     margin-top: 0%;
-    background-size:cover;
     text-align: center; 
+    margin: auto;
 }
 
 header{
     text-align: center;
     padding-bottom: 5%;
-    padding-top: 5%;
 }
 
 h1{
     font-size: 300%;
 }
 
-#button{
+#submit_button{
     width: 150px;
     height: 50px;
-    background-color:aqua;
+    background-color:blue;
     font-weight: bold;
+    color: white;
 }
 
-#button:hover{
-    background-color: aquamarine;
+#submit_button:hover{
+    background-color: darkblue;
     cursor: pointer;
+    font-weight: bolder;
+    color: white;
 }
 
 select:hover{
     cursor: pointer;
+}
+
+.wiki:hover{
+    cursor: pointer;
+}
+
+.question{
+    text-align: left;
+    width: 50%; ;
+    margin-left: 28%;
+    margin-right: 22%;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.explanation{
+    text-align: left;
+    width: 50%; ;
+    margin-left: 28%;
+    margin-right: 22%;
+    font-size: 100%;
+}
+
+#go_back_button{
+    width: 150px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+}
+
+#go_back_button:hover{
+    background-color: darkred;
+    font-weight: bolder;
+    cursor: pointer;
+
 }
 
 
