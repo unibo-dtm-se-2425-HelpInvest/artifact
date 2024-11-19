@@ -10,31 +10,77 @@
 
     <body>
         <header>
-            <img src="static/images/logo.jpg" alt = "logo" height="10%" width="10%">
             <h1>Welcome to HelpInvest</h1>
+            <img src="static/images/logo.jpg" alt = "logo" height="10%" width="10%">
+            
         
         </header>
-        
-        <h2>Input the data</h2>
             
             <form  method="GET" action="#">
-                For how many years would you like to invest?:
-                <input type="text" name="years" id="years" required></input><br>
+                <div class="question">
+                    For how many years would you like to invest?:
+                    <input type="text" name="years" id="years" required></input>
+                </div>
+                
                 <br>
-                How much would you like to invest?:
-                <input type="text" name="capital" id="capital" required></input><br>
+
+                <div class="explanation">
+                    Usually, to see the effects of compoudnding interest the time span should be at least of 20 years. <br>
+                    Consider this as a retirement fund.
+                </div>
+                
                 <br>
-                How much would you like to deposit monthly?:
-                <input type="text" name="monthly_deposit" id="monthly_deposit" required></input><br>
+
+                <div class="question"> 
+                    How much would you like to invest?:
+                    <input type="text" name="capital" id="capital" required></input>
+                </div>
+
                 <br>
-                What is your risk profile?
-                <select name="risk_profile" id="risk_profile">
-                    <option value="high">high</option>
-                    <option value="medium">medium</option>
-                    <option value="low">low</option>
-                </select><br>
+
+                <div class="explanation">
+                    This is your starting capital, the first deposit you are going to make. <br>
+                    The higher the initial deposit, the more powerful is the compounding interest.
+                </div>
+
                 <br>
-                <input type="submit" name="button" id="button" value="GO!"></input>
+
+                <div class = "question">
+                    How much would you like to deposit monthly?:
+                    <input type="text" name="monthly_deposit" id="monthly_deposit" required></input>
+                </div>
+
+                <br>
+                
+                <div class="explanation">
+                    These are the subsequent deposits you are going to make throughout the duration of the fund. <br>
+                    Remember: consistency is key!
+                </div>
+
+                <br>
+
+                <div class = "question">
+                    What is your risk profile?
+                    <select name="risk_profile" id="risk_profile">
+                        <option value="high">high</option>
+                        <option value="medium">medium</option>
+                        <option value="low">low</option>
+                    </select>
+                </div>
+                
+                <br>
+
+                <div class="explanation">
+                    The risk factor is given by the type of securities you are going to inves in. <br>
+                    For instance, stocks are more risky than bonds, but they should generate a better yield.
+                </div>
+
+                <br>
+               
+                <input type="submit" name="submit_button" id="submit_button" value="GO!"></input>
+                <br>
+                <br>
+                <a class= "wiki" href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank">What is compound interest?</a>
 
                 
                 
