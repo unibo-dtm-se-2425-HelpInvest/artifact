@@ -13,6 +13,9 @@ body{
 header{
     text-align: center;
     padding-bottom: 5%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 h1{
@@ -71,6 +74,24 @@ select:hover{
     font-weight: bolder;
     cursor: pointer;
 
+}
+
+footer{
+    width: 50%;
+    margin-left: 28%;
+    margin-right: 22%;
+    text-align: left;
+    margin-top: 3%;
+}
+
+h2{
+    font-weight: bold;
+}
+
+#logo{
+    margin-bottom: 3%;
+    height: 15%;
+    width: 15%;
 }
 
 
