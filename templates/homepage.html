@@ -11,7 +11,15 @@
     <body>
         <header>
             <h1>Welcome to HelpInvest</h1>
-            <img src="static/images/logo.jpg" alt = "logo" height="10%" width="10%">
+
+            <img src="static/images/logo.jpg" alt = "logo" id="logo">
+            
+            <br>
+
+            <p id="introduction">Here you will be able to calculate the performance of your savings plan based on how much you want to invest and waht type of securities you would like to buy.
+                 You can choose for how many years you want to invest, what is your starting capital and what is the value of your monthly deposits to the savings plan. <br> 
+                 Then you will chose what risk profile suits you best. <br>
+                 All the returns will be adjusted for inflation. </p>
             
         
         </header>
@@ -30,6 +38,7 @@
                 </div>
                 
                 <br>
+                <br>
 
                 <div class="question"> 
                     How much would you like to invest?:
@@ -44,6 +53,7 @@
                 </div>
 
                 <br>
+                <br>
 
                 <div class = "question">
                     How much would you like to deposit monthly?:
@@ -57,6 +67,7 @@
                     Remember: consistency is key!
                 </div>
 
+                <br>
                 <br>
 
                 <div class = "question">
@@ -76,16 +87,33 @@
                 </div>
 
                 <br>
+                <br>
                
                 <input type="submit" name="submit_button" id="submit_button" value="GO!"></input>
+
                 <br>
                 <br>
+                <br>
+
                 <a class= "wiki" href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank">What is compound interest?</a>
 
                 
                 
             
             </form>
+        
+        <footer>
+            <h2>The rates are calculated as follows:</h2>
+            <ul>
+                <li>The high return rate is based on the annual average return of the S&P 500 index</li>
+                <br>
+                <li>The low return rate is based on the risk free rate prvided by the European Central Bank</li>
+                <br>
+                <li>The medium return rate is based on the average between the high retunr rate and the low return rate </li>
+                <br>
+                <li>The inflation rate considered is based on the average inflation rate of the Euro zone</li>
+            </ul>
+        </footer>
            
     
         </body>
