@@ -45,9 +45,9 @@ def home():
                 i += 1
             
             if request.args.get("risk_profile") == "low":
-                avgrate = 1.02
-                lowrate = 1.01
-                highrate = 1.03
+                avgrate = 1.01
+                lowrate = 1.005
+                highrate = 1.015
             
                 i = 0
                 avgcapital = capital
@@ -71,9 +71,9 @@ def home():
                     highret.append(highcapital)   
 
             if request.args.get("risk_profile") == "medium":
-                avgrate = 1.07
-                lowrate = 1.05
-                highrate = 1.09
+                avgrate = 1.04
+                lowrate = 1.035
+                highrate = 1.045
                 
                 i = 0
                 avgcapital = capital
@@ -98,9 +98,9 @@ def home():
                 
 
             if request.args.get("risk_profile") == "high":
-                avgrate = 1.12
-                lowrate = 1.1
-                highrate = 1.14
+                avgrate = 1.065
+                lowrate = 1.06
+                highrate = 1.07
                     
                 i = 0
                 avgcapital = capital
@@ -122,11 +122,12 @@ def home():
                     highcapital = (highcapital+yearly_deposit)*highrate
                     i += 1
                     highret.append(highcapital)
-            
+
+            inflationrate = 0.98
             i = 0
             nocapital = capital
             for i in range(years):
-                nocapital += yearly_deposit
+                nocapital = (nocapital+yearly_deposit)*inflationrate
                 i += 1
                 noret.append(nocapital)
             
