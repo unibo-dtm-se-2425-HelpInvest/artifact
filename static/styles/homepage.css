@@ -1,97 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Brand Colors: Primary Blue/Green (from logo) */
+:root {
+    --primary-color: #1a73e8; /* Deep Blue for actions */
+    --secondary-color: #0d47a1; /* Darker Blue for hover */
+    --accent-color: #4CAF50; /* Green from the logo */
+    --background-color: #d9d9cd;
+    --content-bg: #ffffff;
+    --text-color: #333;
+}
+
 html{
-    height: 200%;
-    background-color: #d9d9cd;
+    height: 100%;
+    background-color: var(--background-color);
 }
 
 body{
-    margin: 0%;
-    margin-top: 0%;
-    text-align: center; 
-    margin: auto;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Clean body font */
+    line-height: 1.6;
+    color: var(--text-color);
 }
+
+/* --- Content Container --- */
+
+/* New element to center and constrain content */
+#main-content {
+    max-width: 800px;
+    margin: 40px auto; /* Add vertical margin and center */
+    padding: 30px;
+    background-color: var(--content-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: left; /* Reset text alignment for container content */
+}
+
+/* --- Header and Typography --- */
 
 header{
     text-align: center;
-    padding-bottom: 5%;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    padding-bottom: 20px; /* Use padding for spacing, not fixed height */
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee; /* Subtle separator */
 }
 
 h1{
     font-size: 300%;
+    font-family: 'Poppins', sans-serif; /* Distinct heading font */
+    color: var(--primary-color);
+    margin-top: 0;
 }
 
-#submit_button{
-    width: 150px;
-    height: 50px;
-    background-color:blue;
+h2{
     font-weight: bold;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
 }
 
-#submit_button:hover{
-    background-color: darkblue;
-    cursor: pointer;
-    font-weight: bolder;
-    color: white;
+#logo{
+    margin-bottom: 20px; /* Increased margin */
+    height: auto;
+    width: 150px; /* Fixed width for better control */
+}
+
+#introduction {
+    font-size: 110%;
+}
+
+/* --- Form and Inputs --- */
+
+.question{
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-top: 15px; /* Spacing between sections */
+}
+
+.explanation{
+    font-size: 100%;
+    color: #666; /* Lighter color for supporting text */
+    margin-bottom: 30px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent-color); /* Add a visual marker */
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px; /* Set a consistent, moderate width */
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
 }
 
 select:hover{
     cursor: pointer;
 }
 
-.wiki:hover{
-    cursor: pointer;
-}
+/* --- Buttons --- */
 
-.question{
-    text-align: left;
-    width: 50%; ;
-    margin-left: 28%;
-    margin-right: 22%;
-    font-size: 120%;
+#submit_button{
+    width: 180px;
+    height: 50px;
+    background-color: var(--primary-color);
     font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px; /* Pill shape for modern look */
+    font-size: 120%;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
 }
 
-.explanation{
-    text-align: left;
-    width: 50%; ;
-    margin-left: 28%;
-    margin-right: 22%;
-    font-size: 100%;
+#submit_button:hover{
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #go_back_button{
-    width: 150px;
+    width: 180px;
     height: 50px;
-    background-color: red;
+    background-color: #6c757d; /* Gray for secondary action */
     font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 120%;
+    transition: all 0.3s ease;
 }
 
 #go_back_button:hover{
-    background-color: darkred;
+    background-color: #5a6268;
     font-weight: bolder;
     cursor: pointer;
-
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+/* --- Footer and Links --- */
 
 footer{
-    width: 50%;
-    margin-left: 28%;
-    margin-right: 22%;
+    width: 100%; /* Takes full width of the #main-content */
     text-align: left;
-    margin-top: 3%;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc; /* Dotted line separator */
 }
 
-h2{
-    font-weight: bold;
+footer ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
 }
 
-#logo{
-    margin-bottom: 3%;
-    height: 15%;
-    width: 15%;
+footer li {
+    margin-bottom: 10px;
 }
 
+.wiki:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--primary-color);
+}
 
+/* Second Page Styles */
+#second-page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--content-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
