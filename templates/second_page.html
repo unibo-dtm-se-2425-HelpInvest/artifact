@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <title>HelpInvest</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/homepage.css') }}">
 </head>
 
 <body>
-    <h2>This is what the value of your portfolio will look like</h2>
-    <img src="static/images/plot.png" alt="plot" width="500" height="500">
-    <br>
-    <br>
-    <a href={{url_for("home")}}> 
-        <input type="button" name="go_back_button" id="go_back_button" value = "Go back"></input>
-        
-    </a>
+    <div id="second-page-container">
+        <h2>This is what the value of your portfolio will look like</h2>
+        <img src="static/images/plot.png" alt="plot" width="100%" height="auto"> <br>
+        <br>
+        <a href={{url_for("home")}}>
+            <input type="button" name="go_back_button" id="go_back_button" value = "Go back"></input>
+
+        </a>
+    </div>
 </body>

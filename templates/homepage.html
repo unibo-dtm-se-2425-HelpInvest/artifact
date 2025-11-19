@@ -1,74 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>HelpInvest</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='styles/homepage.css') }}">
-
 </head>
 
-    <body>
+<body>
+    <div id="main-content">
         <header>
             <h1>Welcome to HelpInvest</h1>
 
             <img src="static/images/logo.jpg" alt = "logo" id="logo">
-            
-            <br>
 
-            <p id="introduction">Here you will be able to calculate the performance of your savings plan based on how much you want to invest and waht type of securities you would like to buy.
-                 You can choose for how many years you want to invest, what is your starting capital and what is the value of your monthly deposits to the savings plan. <br> 
+            <p id="introduction">Here you will be able to calculate the performance of your savings plan based on how much you want to invest and what type of securities you would like to buy.
+                 You can choose for how many years you want to invest, what is your starting capital and what is the value of your monthly deposits to the savings plan.
                  Then you will chose what risk profile suits you best. <br>
                  All the returns will be adjusted for inflation. </p>
-            
-        
+
+
         </header>
-            
+
             <form  method="GET" action="#">
                 <div class="question">
                     For how many years would you like to invest?:
                     <input type="text" name="years" id="years" required></input>
                 </div>
-                
-                <br>
 
                 <div class="explanation">
-                    Usually, to see the effects of compoudnding interest the time span should be at least of 20 years. <br>
+                    Usually, to see the effects of compounding interest the time span should be at least of 20 years.
                     Consider this as a retirement fund.
                 </div>
-                
-                <br>
-                <br>
 
-                <div class="question"> 
+                <div class="question">
                     How much would you like to invest?:
                     <input type="text" name="capital" id="capital" required></input>
                 </div>
 
-                <br>
-
                 <div class="explanation">
-                    This is your starting capital, the first deposit you are going to make. <br>
+                    This is your starting capital, the first deposit you are going to make.
                     The higher the initial deposit, the more powerful is the compounding interest.
                 </div>
-
-                <br>
-                <br>
 
                 <div class = "question">
                     How much would you like to deposit monthly?:
                     <input type="text" name="monthly_deposit" id="monthly_deposit" required></input>
                 </div>
 
-                <br>
-                
                 <div class="explanation">
-                    These are the subsequent deposits you are going to make throughout the duration of the fund. <br>
+                    These are the subsequent deposits you are going to make throughout the duration of the fund.
                     Remember: consistency is key!
                 </div>
-
-                <br>
-                <br>
 
                 <div class = "question">
                     What is your risk profile?
@@ -78,43 +61,30 @@
                         <option value="low">low</option>
                     </select>
                 </div>
-                
-                <br>
 
                 <div class="explanation">
-                    The risk factor is given by the type of securities you are going to inves in. <br>
+                    The risk factor is given by the type of securities you are going to invest in.
                     For instance, stocks are more risky than bonds, but they should generate a better yield.
                 </div>
 
-                <br>
-                <br>
-               
                 <input type="submit" name="submit_button" id="submit_button" value="GO!"></input>
 
-                <br>
                 <br>
                 <br>
 
                 <a class= "wiki" href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank">What is compound interest?</a>
 
-                
-                
-            
             </form>
-        
+
         <footer>
             <h2>The rates are calculated as follows:</h2>
             <ul>
                 <li>The high return rate is based on the annual average return of the S&P 500 index</li>
-                <br>
-                <li>The low return rate is based on the risk free rate prvided by the European Central Bank</li>
-                <br>
+                <li>The low return rate is based on the risk free rate provided by the European Central Bank</li>
                 <li>The medium return rate is based on the average between the high retunr rate and the low return rate </li>
-                <br>
                 <li>The inflation rate considered is based on the average inflation rate of the Euro zone</li>
             </ul>
         </footer>
-           
-    
-        </body>
+    </div>
+    </body>
 </html>
