@@ -1,90 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>HelpInvest</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet"  type= "text/css" href= "{{ url_for('static',filename='styles/homepage.css') }}">
-</head>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-<body>
-    <div id="main-content">
-        <header>
-            <h1>Welcome to HelpInvest</h1>
+/* Brand Colors: Primary Blue/Green (from logo) */
+:root {
+    --primary-color: #1a73e8; /* Deep Blue for actions */
+    --secondary-color: #0d47a1; /* Darker Blue for hover */
+    --accent-color: #4CAF50; /* Green from the logo */
+    --background-color: #d9d9cd;
+    --content-bg: #ffffff;
+    --text-color: #333;
+}
 
-            <img src="static/images/logo.jpg" alt = "logo" id="logo">
+html{
+    height: 100%;
+    background-color: var(--background-color);
+}
 
-            <p id="introduction">Here you will be able to calculate the performance of your savings plan based on how much you want to invest and what type of securities you would like to buy.
-                 You can choose for how many years you want to invest, what is your starting capital and what is the value of your monthly deposits to the savings plan.
-                 Then you will chose what risk profile suits you best. <br>
-                 All the returns will be adjusted for inflation. </p>
+body{
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Clean body font */
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* --- Content Container --- */
+
+/* New element to center and constrain content */
+#main-content {
+    max-width: 800px;
+    margin: 40px auto; /* Add vertical margin and center */
+    padding: 30px;
+    background-color: var(--content-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: left; /* Reset text alignment for container content */
+}
+
+/* --- Header and Typography --- */
+
+header{
+    text-align: center;
+    padding-bottom: 20px; /* Use padding for spacing, not fixed height */
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+h1{
+    font-size: 300%;
+    font-family: 'Poppins', sans-serif; /* Distinct heading font */
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+h2{
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+#logo{
+    margin-bottom: 20px; /* Increased margin */
+    height: auto;
+    width: 150px; /* Fixed width for better control */
+}
+
+#introduction {
+    font-size: 110%;
+}
+
+/* --- Form and Inputs --- */
+
+.question{
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-top: 15px; /* Spacing between sections */
+}
+
+.explanation{
+    font-size: 100%;
+    color: #666; /* Lighter color for supporting text */
+    margin-bottom: 30px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent-color); /* Add a visual marker */
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px; /* Set a consistent, moderate width */
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+/* --- Buttons --- */
+
+#submit_button{
+    width: 180px;
+    height: 50px;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px; /* Pill shape for modern look */
+    font-size: 120%;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+#submit_button:hover{
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#go_back_button{
+    width: 180px;
+    height: 50px;
+    background-color: #6c757d; /* Gray for secondary action */
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 120%;
+    transition: all 0.3s ease;
+}
+
+#go_back_button:hover{
+    background-color: #5a6268;
+    font-weight: bolder;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
 
-        </header>
+/* --- Footer and Links --- */
 
-            <form  method="GET" action="#">
-                <div class="question">
-                    For how many years would you like to invest?:
-                    <input type="text" name="years" id="years" required></input>
-                </div>
+footer{
+    width: 100%; /* Takes full width of the #main-content */
+    text-align: left;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc; /* Dotted line separator */
+}
 
-                <div class="explanation">
-                    Usually, to see the effects of compounding interest the time span should be at least of 20 years.
-                    Consider this as a retirement fund.
-                </div>
+footer ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
 
-                <div class="question">
-                    How much would you like to invest?:
-                    <input type="text" name="capital" id="capital" required></input>
-                </div>
+footer li {
+    margin-bottom: 10px;
+}
 
-                <div class="explanation">
-                    This is your starting capital, the first deposit you are going to make.
-                    The higher the initial deposit, the more powerful is the compounding interest.
-                </div>
+.wiki:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--primary-color);
+}
 
-                <div class = "question">
-                    How much would you like to deposit monthly?:
-                    <input type="text" name="monthly_deposit" id="monthly_deposit" required></input>
-                </div>
-
-                <div class="explanation">
-                    These are the subsequent deposits you are going to make throughout the duration of the fund.
-                    Remember: consistency is key!
-                </div>
-
-                <div class = "question">
-                    What is your risk profile?
-                    <select name="risk_profile" id="risk_profile">
-                        <option value="high">high</option>
-                        <option value="medium">medium</option>
-                        <option value="low">low</option>
-                    </select>
-                </div>
-
-                <div class="explanation">
-                    The risk factor is given by the type of securities you are going to invest in.
-                    For instance, stocks are more risky than bonds, but they should generate a better yield.
-                </div>
-
-                <input type="submit" name="submit_button" id="submit_button" value="GO!"></input>
-
-                <br>
-                <br>
-
-                <a class= "wiki" href="https://en.wikipedia.org/wiki/Compound_interest" target="_blank">What is compound interest?</a>
-
-            </form>
-
-        <footer>
-            <h2>The rates are calculated as follows:</h2>
-            <ul>
-                <li>The high return rate is based on the annual average return of the S&P 500 index</li>
-                <li>The low return rate is based on the risk free rate provided by the European Central Bank</li>
-                <li>The medium return rate is based on the average between the high retunr rate and the low return rate </li>
-                <li>The inflation rate considered is based on the average inflation rate of the Euro zone</li>
-            </ul>
-        </footer>
-    </div>
-    </body>
-</html>
+/* Second Page Styles */
+#second-page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--content-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
